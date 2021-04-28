@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Add clipboard links to Azure
 // @author       Thomas Bickley (BJSS)
-// @match        https://dev.azure.com/*/pullrequest/*
+// @match        https://dev.azure.com/*
 // @icon         https://cdn.vsassets.io/content/icons/favicon.ico
 // @grant        none
 // ==/UserScript==
