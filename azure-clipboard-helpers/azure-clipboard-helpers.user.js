@@ -94,7 +94,7 @@
     function injectChangesViewersHelpers() {
         addCopyHelperToFilepathNodes('.repos-changes-viewer', '.repos-summary-header > :first-child .secondary-text:not(.repos-change-summary-file-icon-container)');
         addCopyHelperToFilepathNodes('.repos-compare-toolbar', '.secondary-text');
-        addCopyHelperToFilepathNodes('.activity-feed-list', '.comment-file-header-title .secondary-text');
+        addCopyHelperToFilepathNodes('.activity-feed-list', '.comment-file-header-title .secondary-text:not(.activity-card-time)');
     }
 
     const css = `
