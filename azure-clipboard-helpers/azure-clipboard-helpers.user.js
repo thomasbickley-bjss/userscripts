@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Azure Clipboard Helpers
 // @namespace    http://dev.azure.com/
-// @version      0.1
+// @version      0.2
 // @description  Add clipboard links to Azure
 // @author       Thomas Bickley (BJSS)
 // @match        https://dev.azure.com/*
@@ -80,10 +80,6 @@
 
         const filepathNodes = changesViewerNode.querySelectorAll(nodeQuery);
         for (const filepathNode of Array.from(filepathNodes)) {
-            if (filepathNode.dataset.hasCopyHelper) {
-                return;
-            }
-
             if (filepathNode.childNodes.length !== 1) {
                 return;
             }
@@ -92,14 +88,13 @@
 
             filepathNode.firstChild.textContent += ' ';
             filepathNode.appendChild(createCopyButton('Copy', filepath, 'Copy filepath'));
-
-            filepathNode.dataset.hasCopyHelper = true;
         }
     }
 
     function injectChangesViewersHelpers() {
         addCopyHelperToFilepathNodes('.repos-changes-viewer', '.repos-summary-header > :first-child .secondary-text:not(.repos-change-summary-file-icon-container)');
         addCopyHelperToFilepathNodes('.repos-compare-toolbar', '.secondary-text');
+        addCopyHelperToFilepathNodes('.activity-feed-list', '.comment-file-header-title .secondary-text');
     }
 
     const css = `
